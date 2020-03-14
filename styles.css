@@ -1,0 +1,29 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+}
+
+.country {
+    /* fill: rgb(41, 151, 41); */
+    stroke: black;
+    stroke-width: 0.05px;
+}
+
+.country:hover {
+    fill: white;
+}
+
+.sphere {
+    fill: #11117c;
+}
+
+.tick text {
+    font-size: 1.0em;
+    fill: #black;
+    font-family: sans-serif;
+}
+
+.tick circle {
+    stroke: black;
+    stroke-opacity: 0.5;
+}
