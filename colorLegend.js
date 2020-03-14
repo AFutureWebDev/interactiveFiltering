@@ -4,7 +4,9 @@ export const colorLegend = (selection, props) => {
       circleRadius,
       spacing,                   
       textOffset,
-      backgroundRectWidth        
+      backgroundRectWidth,
+      onClick,
+      selectedColorValue    
     } = props;   
     
     const backgroundRect = selection.selectAll('rect')
@@ -29,7 +31,18 @@ export const colorLegend = (selection, props) => {
       .merge(groups)
         .attr('transform', (d, i) =>    
           `translate(0, ${i * spacing})`  
-        );
+        )
+        .attr('oppacity', d =>
+          (!selectedColorValue || d === selectedColorValue)
+            ? 1
+            : 0.2
+          )
+        .on('click', d => onClick(
+          d === selectedColorValue
+            ? null
+            : d
+        ));
+  
     groups.exit().remove();
     
     groupsEnter.append('circle')

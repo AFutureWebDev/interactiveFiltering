@@ -9,12 +9,20 @@ body {
     stroke-width: 0.05px;
 }
 
+.country.highlighted {
+    stroke-width: 0.5px;
+}
+
 .country:hover {
     fill: white;
 }
 
 .sphere {
     fill: #11117c;
+}
+
+.tick {
+    cursor: pointer;
 }
 
 .tick text {
